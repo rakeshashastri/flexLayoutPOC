@@ -1,0 +1,6 @@
+framework module Pods_FlexPOC {
+  umbrella header "Pods-FlexPOC-umbrella.h"
+
+  export *
+  module * { export * }
+}
