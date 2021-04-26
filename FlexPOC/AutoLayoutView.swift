@@ -15,17 +15,17 @@ class AutoLayoutView: UIView {
         return view
     }()
     
-//    lazy var field: UILabel = {
-//        let label = UILabel()
-//        label.text = "<label>"
-//        label.numberOfLines = 0
-//        label.font = .systemFont(ofSize: 15, weight: .regular)
-//        label.setContentHuggingPriority(.defaultLow, for: .vertical)
-//        label.setContentCompressionResistancePriority(.required, for: .horizontal)
-//        label.setContentCompressionResistancePriority(.required, for: .vertical)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
+    lazy var field: UILabel = {
+        let label = UILabel()
+        label.text = "<label>"
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.setContentHuggingPriority(.defaultLow, for: .vertical)
+        label.setContentCompressionResistancePriority(.required, for: .horizontal)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     lazy var value: UILabel = {
         let label = UILabel()
@@ -39,27 +39,33 @@ class AutoLayoutView: UIView {
     }()
     
     lazy var leftConstraints: [NSLayoutConstraint] = [
-//        field.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-//        field.topAnchor.constraint(equalTo: containerView.topAnchor),
         
-        value.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-        value.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-        value.topAnchor.constraint(equalTo: containerView.topAnchor),
-        value.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-        
-        containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-        containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-        containerView.topAnchor.constraint(equalTo: topAnchor),
-        containerView.bottomAnchor.constraint(equalTo: bottomAnchor)
     ]
+    
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(containerView)
-//        containerView.addSubview(field)
+        containerView.addSubview(field)
         containerView.addSubview(value)
-        NSLayoutConstraint.activate(leftConstraints)
+        let bottomConstraint = value.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        bottomConstraint.priority = .defaultLow
+        NSLayoutConstraint.activate([
+            field.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            field.topAnchor.constraint(equalTo: containerView.topAnchor),
+            
+            value.leadingAnchor.constraint(equalTo: field.trailingAnchor, constant: 5),
+            value.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            value.topAnchor.constraint(equalTo: containerView.topAnchor),
+            bottomConstraint,
+            
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
     
     override func layoutSubviews() {

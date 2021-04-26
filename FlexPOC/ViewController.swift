@@ -8,11 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var containerView: FlexView = {
+        let view = FlexView()
+        view.backgroundColor = .red
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var flexView = FlexView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view = FlexView()
+        view.addSubview(containerView)
+        NSLayoutConstraint.activate([
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+        ])
+//        containerView.addSubview(flexView)
         view.backgroundColor = .white
         // Do any additional setup after loading the view.
     }
