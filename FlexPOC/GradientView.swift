@@ -18,7 +18,7 @@ class GradientView: UIView {
     lazy var dummyView = UIView()
     
     lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "zoho"))
+        let imageView = UIImageView(image: nil)
         imageView.isOpaque = false
         imageView.contentMode = .scaleAspectFit
 //        imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,12 +29,18 @@ class GradientView: UIView {
         super.init(frame: frame)
         
         layer.insertSublayer(gradientLayer, at: 0)
-        addSubview(imageView)
-//        insertSubview(imageView, at: 0)
+//        addSubview(imageView)
+        insertSubview(imageView, at: 1)
         addSubview(dummyView)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+        UIView.animate(withDuration: 3, delay: 2, options: .transitionCrossDissolve) {
+            self.imageView.image = UIImage(named: "zoho")
+        } completion: { completed in
             
         }
+
+        UIView.transition(with: self.imageView, duration: 3, options: .transitionCrossDissolve, animations: {
+            
+        }, completion: nil)
     }
     
     required init?(coder: NSCoder) {
