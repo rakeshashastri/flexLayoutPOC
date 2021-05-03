@@ -16,18 +16,37 @@ class ViewController: UIViewController {
         return view
     }()
     
-    lazy var flexView = FlexView()
+    lazy var gradientView: GradientView = {
+        let gradientView = GradientView()
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        return gradientView
+    }()
+    
+    
+    
+    lazy var flexView = AutoLayoutView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(containerView)
+        view.addSubview(gradientView)
         NSLayoutConstraint.activate([
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            gradientView.topAnchor.constraint(equalTo: view.topAnchor)
         ])
+        
+        
+//        view.addSubview(flexView)
+//        flexView.frame = CGRect(x: 100, y: 100, width: 100, height: 10)
+//        flexView.backgroundColor = .red
+//        NSLayoutConstraint.activate([
+//            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+//            containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+//            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+//            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+//        ])
 //        containerView.addSubview(flexView)
         view.backgroundColor = .white
         // Do any additional setup after loading the view.
