@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1CA0D1263FF25B00ADB684 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1CA0D0263FF25B00ADB684 /* GradientView.swift */; };
 		0E409CEA263196A6004536B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E409CE9263196A6004536B3 /* AppDelegate.swift */; };
 		0E409CEC263196A6004536B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E409CEB263196A6004536B3 /* SceneDelegate.swift */; };
 		0E409CF0263196A7004536B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E409CEF263196A7004536B3 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1CA0D0263FF25B00ADB684 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0E409CE6263196A6004536B3 /* FlexPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E409CE9263196A6004536B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E409CEB263196A6004536B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0E409CE9263196A6004536B3 /* AppDelegate.swift */,
 				0E409CEB263196A6004536B3 /* SceneDelegate.swift */,
 				0ED535502636C0040004F45C /* ViewController.swift */,
+				0E1CA0D0263FF25B00ADB684 /* GradientView.swift */,
 				0ED535552636C02F0004F45C /* FlexView.swift */,
 				0ED535632636C20C0004F45C /* AutoLayoutView.swift */,
 				0ED535682636C5060004F45C /* FlexLayoutView.swift */,
@@ -347,6 +350,7 @@
 				0E409CEA263196A6004536B3 /* AppDelegate.swift in Sources */,
 				0ED535642636C20C0004F45C /* AutoLayoutView.swift in Sources */,
 				0E409CEC263196A6004536B3 /* SceneDelegate.swift in Sources */,
+				0E1CA0D1263FF25B00ADB684 /* GradientView.swift in Sources */,
 				0ED535562636C02F0004F45C /* FlexView.swift in Sources */,
 				0ED535692636C5060004F45C /* FlexLayoutView.swift in Sources */,
 			);

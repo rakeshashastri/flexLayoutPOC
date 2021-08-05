@@ -1,12 +1,16 @@
 PODS:
   - FlexLayout (1.3.20)
   - PinLayout (1.9.3)
+  - Toast (1.0.0)
 
 DEPENDENCIES:
   - FlexLayout
   - PinLayout
+  - Toast
 
 SPEC REPOS:
+  https://github.com/rakeshashastri/Toast.git:
+    - Toast
   trunk:
     - FlexLayout
     - PinLayout
@@ -14,7 +18,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   FlexLayout: 025dd153bd5618dcc9f93ef914106d7dc2a86fdc
   PinLayout: 4d8733121f8687edcc8f00c19bf1379d12808767
+  Toast: d912f639bcb1b814b57d746b3cd109fc121bf958
 
-PODFILE CHECKSUM: 41f31f614809440f50ea10aca6806ff07b4ab9b5
+PODFILE CHECKSUM: 5f8f0312252d7689a944e9237a1f3b58db8a816b
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
